@@ -167,7 +167,7 @@ public class ResourceCentre {
 		ResourceCentre.setHeader("CHROMEBOOK LIST");
 		String output = String.format("%-10s %-30s %-10s %-10s %-20s\n", "ASSET TAG", "DESCRIPTION",
 				"AVAILABLE", "DUE DATE","OS");
-		output += retrieveAllChromebook(chromebookList);
+		output = retrieveAllChromebook(chromebookList);
 		System.out.println(output);
 	}
 
@@ -197,11 +197,12 @@ public class ResourceCentre {
 	
 	public static Chromebook inputChromebook() {	
 		// write your code here
+		Chromebook cb = null;
 		String tag = Helper.readString("Enter asset tag > ");
 		String description = Helper.readString("Enter description > ");
 		String os = Helper.readString("Enter os >");
 		
-		Chromebook cb = new Chromebook(tag,description,os);
+		cb = new Chromebook(tag,description,os);
 		return cb;
 		
 	}	
